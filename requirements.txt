@@ -1,0 +1,23 @@
+# Core
+numpy
+pandas
+
+# Audio processing
+librosa
+scipy
+
+# PyTorch for VAE models
+torch
+torchvision
+torchaudio
+
+# Machine learning & clustering
+scikit-learn
+umap-learn
+sentence-transformers
+
+# Visualization
+matplotlib
+
+# Optional: progress bar
+tqdm
