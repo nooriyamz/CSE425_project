@@ -11,4 +11,6 @@ data = {
 }
 
 df = pd.DataFrame(data)
-df.to_csv("results/clustering_metrics.csv", index=False)
+
+# Ensure proper quoting
+df.to_csv("results/clustering_metrics.csv", index=False, quoting=pd.io.common.csv.QUOTE_MINIMAL)
