@@ -1,72 +1,56 @@
-# Unsupervised Learning Project: VAE for Hybrid Language Music Clustering
-
-**Course:** Neural Networks  
-**Prepared By:** Moin Mostakim
 
 ---
 
-## Project Overview
+## Data Folder
 
-This project implements an unsupervised learning pipeline inspired by Variational Autoencoders (VAE) for clustering hybrid language music tracks.  
-The goal is to extract latent representations from audio and/or lyrics and perform clustering across easy, medium, and hard tasks.
-
----
-
-## Repository Structure
-
-### `data/` Folder
-
-This folder contains the datasets used for the project.
-
-- `audio/` – Audio files for music tracks  
-  [Google Drive link for audio files](https://drive.google.com/drive/folders/your-audio-folder-link)
-
-- `metadata/` – Metadata and lyric files for the tracks  
-  [Google Drive link for metadata files](https://drive.google.com/drive/folders/your-metadata-folder-link)
-
-Each subfolder includes a `README.md` describing its contents.
+- **audio/** – Contains audio clips for music tracks. [Google Drive link](https://drive.google.com/drive/folders/1n2GlQ5uMvyyWxFbMrH0StO5epqhs57fe)
+- **metadata/** – Contains CSV files with song metadata and lyrics. [Google Drive link](https://drive.google.com/file/d/1yKeQM1ADi4pz9Mb3aqEGtQYLmLWsAlxT/view?usp=sharing)
 
 ---
 
-### `notebooks/` Folder
+## Notebooks Folder
 
-Contains Jupyter notebooks for exploratory analysis, organized by task difficulty:
+Contains Jupyter/Colab notebooks for the following tasks:
 
-- **Easy Task:** Basic VAE feature extraction and clustering  
-- **Medium Task:** Convolutional VAE with hybrid audio + lyrics features  
-- **Hard Task:** Conditional VAE / Beta-VAE for multi-modal clustering
+- **Easy Task:** Basic VAE feature extraction and PCA + KMeans clustering  
+- **Medium Task:** Convolutional VAE with hybrid audio + lyrics embeddings, multiple clustering algorithms  
+- **Hard Task:** Beta-VAE or Conditional VAE, multi-modal clustering with audio, lyrics, and genre features
 
-[Open the Colab notebook here](https://colab.research.google.com/drive/1HUxMDML25a68BsSPNeI1fu0UR4ccTJ71?usp=sharing)
-
-The folder also includes a `README.md` explaining the notebooks and their respective tasks.
+[Colab Notebook Link](https://colab.research.google.com/drive/1HUxMDML25a68BsSPNeI1fu0UR4ccTJ71?usp=sharing)
 
 ---
 
-### `src/` Folder
+## Results Folder
 
-Contains Python scripts for the main pipeline:
-
-- `vae.py` – Variational Autoencoder implementation  
-- `dataset.py` – Dataset loading and preprocessing  
-- `clustering.py` – Clustering algorithms  
-- `evaluation.py` – Metric computation and evaluation  
+- **latent_visualization/** – Visualizations of the latent space (UMAP, t-SNE plots, reconstructions)  
+- **clustering_metrics.csv** – Performance metrics for different experiments (Silhouette Score, CH Index, NMI, ARI, Purity)
 
 ---
 
-### `results/` Folder
+## Source Code (`src/`)
 
-- `latent_visualization/` – Visualizations of the latent space  
-- `clustering_metrics.csv` – Clustering performance metrics for different experiments  
-
----
-
-### Other Files
-
-- `requirements.txt` – Python dependencies  
-- `README.md` – This file  
+- **vae.py** – VAE / Beta-VAE implementation  
+- **dataset.py** – Dataset loading, preprocessing, and Mel-spectrogram extraction  
+- **clustering.py** – KMeans, Agglomerative Clustering, DBSCAN implementations  
+- **evaluation.py** – Metrics computation (Silhouette, CH, NMI, ARI, Purity)
 
 ---
 
-## Notes
+## Usage
 
-This repository is organized to support reproducibility and easy navigation for all project tasks (easy, medium, hard). All datasets, notebooks, and results are linked and structured for clarity.
+1. Clone the repository.  
+2. Download the **audio** and **metadata** files from Google Drive.  
+3. Install dependencies from `requirements.txt`.  
+4. Open the Colab notebook in `notebooks/` to run Easy, Medium, or Hard tasks.  
+5. Results and visualizations are stored in the `results/` folder.
+
+---
+
+## References / Datasets
+
+- **Million Song Dataset (MSD):** http://millionsongdataset.com/  
+- **GTZAN Genre Collection:** http://marsyas.info/downloads/datasets.html  
+- **Jamendo Dataset:** https://www.kaggle.com/datasets/andradaolteanu/jamendo-music-dataset  
+- **MIR-1K Dataset:** https://sites.google.com/site/unvoicedsoundseparation/mir-1k  
+- **Lakh MIDI Dataset (LMD):** https://colinraffel.com/projects/lmd/  
+- **Kaggle Lyrics Datasets:** https://www.kaggle.com/datasets?search=lyrics
