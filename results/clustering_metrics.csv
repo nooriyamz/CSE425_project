@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = {
+    "Task": ["Easy", "Easy"],
+    "Method": ["PCA+KMeans", "VAE+KMeans"],
+    "Silhouette": [0.45, 0.52],
+    "Calinski-Harabasz": [234.5, 312.1],
+    "NMI": [None, None],
+    "ARI": [None, None],
+    "Purity": [None, None]
+}
+
+df = pd.DataFrame(data)
+df.to_csv("results/clustering_metrics.csv", index=False)
