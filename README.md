@@ -1,56 +1,72 @@
+# Unsupervised Learning Project: VAE for Hybrid Language Music Clustering
+
+**Course:** Neural Networks  
+**Prepared By:** Moin Mostakim
 
 ---
 
-## Data Folder
+## Project Overview
 
-- **audio/** – Contains audio clips for music tracks. [Google Drive link](https://drive.google.com/drive/folders/1n2GlQ5uMvyyWxFbMrH0StO5epqhs57fe)
-- **metadata/** – Contains CSV files with song metadata and lyrics. [Google Drive link](https://drive.google.com/file/d/1yKeQM1ADi4pz9Mb3aqEGtQYLmLWsAlxT/view?usp=sharing)
-
----
-
-## Notebooks Folder
-
-Contains Jupyter/Colab notebooks for the following tasks:
-
-- **Easy Task:** Basic VAE feature extraction and PCA + KMeans clustering  
-- **Medium Task:** Convolutional VAE with hybrid audio + lyrics embeddings, multiple clustering algorithms  
-- **Hard Task:** Beta-VAE or Conditional VAE, multi-modal clustering with audio, lyrics, and genre features
-
-[Colab Notebook Link](https://colab.research.google.com/drive/1HUxMDML25a68BsSPNeI1fu0UR4ccTJ71?usp=sharing)
+This project implements an unsupervised learning pipeline inspired by Variational Autoencoders (VAE) for clustering hybrid language music tracks.  
+The goal is to extract latent representations from audio and/or lyrics and perform clustering across easy, medium, and hard tasks.
 
 ---
 
-## Results Folder
+## Repository Structure
 
-- **latent_visualization/** – Visualizations of the latent space (UMAP, t-SNE plots, reconstructions)  
-- **clustering_metrics.csv** – Performance metrics for different experiments (Silhouette Score, CH Index, NMI, ARI, Purity)
+### `data/` Folder
 
----
+This folder contains the datasets used for the project.
 
-## Source Code (`src/`)
+- `audio/` – Audio files for music tracks  
+  [Google Drive link for audio files](https://drive.google.com/drive/folders/1n2GlQ5uMvyyWxFbMrH0StO5epqhs57fe)
 
-- **vae.py** – VAE / Beta-VAE implementation  
-- **dataset.py** – Dataset loading, preprocessing, and Mel-spectrogram extraction  
-- **clustering.py** – KMeans, Agglomerative Clustering, DBSCAN implementations  
-- **evaluation.py** – Metrics computation (Silhouette, CH, NMI, ARI, Purity)
+- `metadata/` – Metadata and lyric files for the tracks  
+  [Google Drive link for metadata files](https://drive.google.com/file/d/1yKeQM1ADi4pz9Mb3aqEGtQYLmLWsAlxT/view?usp=sharing)
 
----
-
-## Usage
-
-1. Clone the repository.  
-2. Download the **audio** and **metadata** files from Google Drive.  
-3. Install dependencies from `requirements.txt`.  
-4. Open the Colab notebook in `notebooks/` to run Easy, Medium, or Hard tasks.  
-5. Results and visualizations are stored in the `results/` folder.
+Each subfolder includes a `README.md` describing its contents.
 
 ---
 
-## References / Datasets
+### `notebooks/` Folder
 
-- **Million Song Dataset (MSD):** http://millionsongdataset.com/  
-- **GTZAN Genre Collection:** http://marsyas.info/downloads/datasets.html  
-- **Jamendo Dataset:** https://www.kaggle.com/datasets/andradaolteanu/jamendo-music-dataset  
-- **MIR-1K Dataset:** https://sites.google.com/site/unvoicedsoundseparation/mir-1k  
-- **Lakh MIDI Dataset (LMD):** https://colinraffel.com/projects/lmd/  
-- **Kaggle Lyrics Datasets:** https://www.kaggle.com/datasets?search=lyrics
+Contains Jupyter notebooks for exploratory analysis, organized by task difficulty:
+
+- **Easy Task:** Basic VAE feature extraction and clustering  
+- **Medium Task:** Convolutional VAE with hybrid audio + lyrics features  
+- **Hard Task:** Conditional VAE / Beta-VAE for multi-modal clustering
+
+[Open the Colab notebook here](https://colab.research.google.com/drive/1HUxMDML25a68BsSPNeI1fu0UR4ccTJ71?usp=sharing)
+
+The folder also includes a `README.md` explaining the notebooks and their respective tasks.
+
+---
+
+### `src/` Folder
+
+Contains Python scripts for the main pipeline:
+
+- `vae.py` – Variational Autoencoder implementation  
+- `dataset.py` – Dataset loading and preprocessing  
+- `clustering.py` – Clustering algorithms  
+- `evaluation.py` – Metric computation and evaluation  
+
+---
+
+### `results/` Folder
+
+- `latent_visualization/` – Visualizations of the latent space  
+- `clustering_metrics.csv` – Clustering performance metrics for different experiments  
+
+---
+
+### Other Files
+
+- `requirements.txt` – Python dependencies  
+- `README.md` – This file  
+
+---
+
+## Notes
+
+This repository is organized to support reproducibility and easy navigation for all project tasks (easy, medium, hard). All datasets, notebooks, and results are linked and structured for clarity.
